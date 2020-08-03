@@ -1,0 +1,12 @@
+email-validator
+flask
+flask_admin
+flask-bootstrap
+flask_login
+flask_migrate
+flask_principal
+flask_sqlalchemy
+flask_wtf
+psycopg2-binary
+wtforms
+werkzeug

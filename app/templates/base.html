@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+    <title>Trivia</title>
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+    <a href="/trivia">Inicio</a>
+    {% if current_user.is_anonymous %}
+        <a href="{{ url_for('auth.login') }}">Iniciar sesión</a>
+    {% else %}
+        <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a> Usuario {{ current_user.name }}
+    {% endif %}
+</div>
+{% endblock %}
+{% block content %}
+    <hr>
+    {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              <ul>
+                  {% for message in messages %}
+                  <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+              {% endif %}
+    {% endwith %}
+    {% block app_content %}{% endblock %}
+<style>
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table th {
+   text-align: center;
+}
+
+.table {
+   margin: auto;
+   width: 50% !important;
+}
+</style>
+{% endblock %}

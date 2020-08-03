@@ -1,0 +1,17 @@
+<body>
+{% extends "base.html" %}
+{% block app_content %}
+<div style="text-align: center;">
+    <h1>
+        <span style="font-weight: bold; background-color: RGB(127, 205, 205);">
+            Has ganado!!!
+        </span>
+    </h1><br>
+</div>
+<div style="text-align:center;">
+    <h3>
+        <p>El tiempo total de juego fue: {{session['total_time']}}</p>
+    </h3><br>
+</div><br>
+{% endblock %}
+</body>
